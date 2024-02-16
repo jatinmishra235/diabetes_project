@@ -1,6 +1,6 @@
 # Diabetes prediction
 
-this projects whether person is diabetic or not from various features. 
+this project classifies whether person is diabetic or not from various features. 
 Dataset is taken from kaggle.
 
 ### 1. Environment setup 
