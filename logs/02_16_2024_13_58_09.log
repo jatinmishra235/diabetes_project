@@ -1,0 +1,14 @@
+[2024-02-16 13:58:10,871] 9 root - INFO - app started
+[2024-02-16 13:58:10,888] 187 werkzeug - WARNING -  * Debugger is active!
+[2024-02-16 13:58:10,897] 187 werkzeug - INFO -  * Debugger PIN: 929-284-226
+[2024-02-16 13:58:14,257] 69 root - INFO - entered initiate_data_ingestion
+[2024-02-16 13:58:14,257] 47 root - INFO - exporting data from mongodb
+[2024-02-16 13:58:16,307] 53 root - INFO - saving exported data into feature store file path: artifacts
+[2024-02-16 13:58:16,331] 74 root - INFO - got data from mongodb
+[2024-02-16 13:58:16,331] 69 root - INFO - entered initiate_data_transformation coponent of Data_transformation class
+[2024-02-16 13:58:16,387] 16 root - INFO - entered the save_object method pf MainUtils class
+[2024-02-16 13:58:16,423] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 13:58:16] "[35m[1mGET /train HTTP/1.1[0m" 500 -
+[2024-02-16 13:58:16,450] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 13:58:16] "[36mGET /train?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+[2024-02-16 13:58:16,454] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 13:58:16] "[36mGET /train?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+[2024-02-16 13:58:16,499] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 13:58:16] "[36mGET /train?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+[2024-02-16 13:58:16,561] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 13:58:16] "[36mGET /train?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -

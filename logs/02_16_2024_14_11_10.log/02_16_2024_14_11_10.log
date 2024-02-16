@@ -1,0 +1,119 @@
+[2024-02-16 14:11:12,796] 9 root - INFO - app started
+[2024-02-16 14:11:12,814] 187 werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+[2024-02-16 14:11:12,814] 187 werkzeug - INFO - [33mPress CTRL+C to quit[0m
+[2024-02-16 14:11:20,174] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:11:20] "GET /predict HTTP/1.1" 200 -
+[2024-02-16 14:11:20,198] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:11:20] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
+[2024-02-16 14:11:20,225] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:11:20] "[33mGET /script.js HTTP/1.1[0m" 404 -
+[2024-02-16 14:12:31,463] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:12:31] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2024-02-16 14:12:33,295] 187 werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 49, in predict
+    model = self.utils.load_object(self.prediction_pipeline_config.model_file_path)
+TypeError: load_object() missing 1 required positional argument: 'filename'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 67, in get_predicted_dataframe
+    predictions = self.predict(input_dataframe)
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 58, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 85, in run_prediction_pipeline
+    self.get_predicted_dataframe(input_csv_path)
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 80, in get_predicted_dataframe
+    raise CustomException(e,sys) from e
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [67] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\application.py", line 33, in prediction
+    prediction_file_detail = prediction_pipeline.run_prediction_pipeline()
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 88, in run_prediction_pipeline
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [85] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [67] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\werkzeug\serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    application_iter = app(environ, start_response)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\Diabetes_project\application.py", line 41, in prediction
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\application.py] line number [33] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [85] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [67] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']]]]
+[2024-02-16 14:12:34,304] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:12:34] "[35m[1mPOST /predict HTTP/1.1[0m" 500 -
+[2024-02-16 14:12:36,436] 187 werkzeug - ERROR - Error on request:
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 49, in predict
+    model = self.utils.load_object(self.prediction_pipeline_config.model_file_path)
+TypeError: load_object() missing 1 required positional argument: 'filename'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 67, in get_predicted_dataframe
+    predictions = self.predict(input_dataframe)
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 58, in predict
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 85, in run_prediction_pipeline
+    self.get_predicted_dataframe(input_csv_path)
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 80, in get_predicted_dataframe
+    raise CustomException(e,sys) from e
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [67] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\Desktop\Diabetes_project\application.py", line 33, in prediction
+    prediction_file_detail = prediction_pipeline.run_prediction_pipeline()
+  File "C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py", line 88, in run_prediction_pipeline
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [85] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [67] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']]]
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\werkzeug\serving.py", line 364, in run_wsgi
+    execute(self.server.app)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\werkzeug\serving.py", line 325, in execute
+    application_iter = app(environ, start_response)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 2213, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 2193, in wsgi_app
+    response = self.handle_exception(e)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 2190, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 1486, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 1484, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\Users\user\anaconda3\envs\practice\lib\site-packages\flask\app.py", line 1469, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\user\Desktop\Diabetes_project\application.py", line 41, in prediction
+    raise CustomException(e,sys)
+src.exception.CustomException: Error occured script name [C:\Users\user\Desktop\Diabetes_project\application.py] line number [33] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [85] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [67] error message [Error occured script name [C:\Users\user\Desktop\Diabetes_project\src\pipeline\prediction_pipeline.py] line number [49] error message [load_object() missing 1 required positional argument: 'filename']]]]
