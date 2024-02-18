@@ -162,12 +162,6 @@ srsly==2.4.8
 stack-data==0.6.2
 statsmodels==0.14.0
 tangled-up-in-unicode==0.2.0
-tensorboard==2.13.0
-tensorboard-data-server==0.7.2
-tensorflow==2.13.0
-tensorflow-estimator==2.13.0
-tensorflow-intel==2.13.0
-tensorflow-io-gcs-filesystem==0.31.0
 termcolor==2.3.0
 terminado==0.17.1
 thinc==8.2.1
