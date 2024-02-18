@@ -1,9 +1,0 @@
-[2024-02-16 14:27:07,524] 9 root - INFO - app started
-[2024-02-16 14:27:07,538] 187 werkzeug - WARNING -  * Debugger is active!
-[2024-02-16 14:27:07,546] 187 werkzeug - INFO -  * Debugger PIN: 929-284-226
-[2024-02-16 14:27:10,167] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:27:10] "GET /predict HTTP/1.1" 200 -
-[2024-02-16 14:27:10,187] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:27:10] "[33mGET /static/css/style.css HTTP/1.1[0m" 404 -
-[2024-02-16 14:27:10,207] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:27:10] "[33mGET /script.js HTTP/1.1[0m" 404 -
-[2024-02-16 14:27:16,416] 36 root - INFO - entered into load_object
-[2024-02-16 14:27:16,416] 36 root - INFO - entered into load_object
-[2024-02-16 14:27:16,437] 187 werkzeug - INFO - 127.0.0.1 - - [16/Feb/2024 14:27:16] "POST /predict HTTP/1.1" 200 -
